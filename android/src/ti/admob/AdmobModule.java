@@ -23,6 +23,8 @@ public class AdmobModule extends KrollModule {
 	@Kroll.constant
 	public static final String AD_NOT_RECEIVED = "ad_not_received";
 	public static Boolean TESTING = false;
+	public static int WIDTH = 320;
+	public static int HEIGHT = 50;
 	public static String PUBLISHER_ID;
 
 	// *

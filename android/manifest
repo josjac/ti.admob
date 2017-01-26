@@ -3,8 +3,8 @@
 # during compilation, packaging, distribution, etc.
 #
 version: 3.0.1
-apiversion: 3
-architectures: armeabi-v7a x86
+apiversion: 2
+architectures: armeabi armeabi-v7a x86 x86_64
 description: Titanium Admob module for Android
 author: Brian Kurzius
 license: Apache License, Version 2.0
@@ -16,4 +16,4 @@ name: admob
 moduleid: ti.admob
 guid: 0d005e93-9980-4739-9e41-fd1129c8ff32
 platform: android
-minsdk: 6.0.0
+minsdk: 5.5.1

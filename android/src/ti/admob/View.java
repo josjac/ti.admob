@@ -22,6 +22,7 @@ import com.google.android.gms.ads.mediation.admob.AdMobExtras;
 public class View extends TiUIView {
 	private static final String TAG = "AdMobView";
 	AdView adView;
+	AdSize adSize;
 	int prop_top;
 	int prop_left;
 	int prop_right;
@@ -42,8 +43,10 @@ public class View extends TiUIView {
 	private void createAdView() {
 		Log.d(TAG, "createAdView()");
 		// create the adView
+    adSize = new AdSize(AdmobModule.WIDTH	, AdmobModule.HEIGHT	);
 		adView = new AdView(proxy.getActivity());
-		adView.setAdSize(AdSize.BANNER);
+    adView.setAdSize(adSize);
+
 		adView.setAdUnitId(AdmobModule.PUBLISHER_ID);
 		// set the listener
 		adView.setAdListener(new AdListener() {
@@ -57,7 +60,7 @@ public class View extends TiUIView {
 				proxy.fireEvent(AdmobModule.AD_NOT_RECEIVED, new KrollDict());
 			}
 		});
-		adView.setPadding(prop_left, prop_top, prop_right, 0);
+		//adView.setPadding(prop_left, prop_top, prop_right, 0);
 		// Add the AdView to your view hierarchy.
 		// The view will have no size until the ad is loaded.
 		setNativeView(adView);
@@ -88,6 +91,14 @@ public class View extends TiUIView {
 	public void processProperties(KrollDict d) {
 		super.processProperties(d);
 		Log.d(TAG, "process properties");
+		if (d.containsKey("width")) {
+			Log.d(TAG, "has width: " + d.getInt("width"));
+			AdmobModule.WIDTH = d.getInt("width");
+		}
+		if (d.containsKey("height")) {
+			Log.d(TAG, "has height: " + d.getInt("height"));
+			AdmobModule.HEIGHT = d.getInt("height");
+		}
 		if (d.containsKey("publisherId")) {
 			Log.d(TAG, "has publisherId: " + d.getString("publisherId"));
 			AdmobModule.PUBLISHER_ID = d.getString("publisherId");
