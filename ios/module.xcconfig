@@ -4,4 +4,4 @@
 //
 FRAMEWORK_SEARCH_PATHS=$(SRCROOT)/../../modules/iphone/ti.admob/2.1.0/platform "~/Library/Application\ Support/Titanium/modules/iphone/ti.admob/2.1.0/platform"
 
-OTHER_LDFLAGS=$(inherited) -framework AdSupport -framework iAd -framework AudioToolbox -framework AVFoundation -framework CoreGraphics -framework CoreTelephony -framework MessageUI -framework StoreKit -framework SystemConfiguration -framework GoogleMobileAds
+OTHER_LDFLAGS=$(inherited) -framework JavaScriptCore -framework MediaPlayer -framework CoreMedia -framework CoreVideo -framework CoreMotion -framework GLKit -framework OpenGLES  -framework AdSupport -framework iAd -framework AudioToolbox -framework AVFoundation -framework CoreGraphics -framework CoreTelephony -framework MessageUI -framework StoreKit -framework SystemConfiguration -framework CoreBluetooth -framework SafariServices -framework GoogleMobileAds -framework MobileCoreServices 
